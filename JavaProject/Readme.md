@@ -64,4 +64,44 @@ The project is organized into several packages focusing on:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/java-swing-practice.git
+2. **Open the project in Eclipse IDE.**:
+3. **Run the Main.java class from the swnigPractice package.**
+
+   **Inside Main.java, uncomment the class you want to test**:
+   ```bash
+   // new TextFieldFrame();
+   // new CheckBoxexFrame();
+   // new RadioButtonFrame();
+4.**Build and run the project**
+### 📸 Example: CheckBoxexFrame.java
+```bash
+public class CheckBoxexFrame extends JFrame implements ActionListener {
+    JButton button;
+    JCheckBox checkbox;
+
+    CheckBoxexFrame() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(new FlowLayout());
+
+        button = new JButton("submit");
+        button.addActionListener(this);
+
+        checkbox = new JCheckBox("I am not robot");
+        checkbox.setFont(new Font("Roboto", Font.PLAIN, 25));
+        checkbox.setFocusable(false);
+
+        this.add(checkbox);
+        this.add(button);
+        this.pack();
+        this.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == button) {
+            System.out.println(checkbox.isSelected());
+        }
+    }
+}
+
 
